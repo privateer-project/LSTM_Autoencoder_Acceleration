@@ -1,0 +1,59 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source /tools/Xilinx/Vitis_HLS/2021.1/scripts/vitis_hls/hls.tcl -notrace
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2021.1/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'dimdano' on host 'skylla' (Linux_x86_64 version 5.4.0-169-generic) on Sat Jan 20 00:51:24 EET 2024
+INFO: [HLS 200-10] On os Ubuntu 18.04.6 LTS
+INFO: [HLS 200-10] In directory '/home/dimdano/Desktop/PRIVATEER/RNN_HLS_custom/lstm_ae_small/prj_cmd'
+Sourcing Tcl script 'build.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset prj_vivado 
+INFO: [HLS 200-10] Opening and resetting project '/home/dimdano/Desktop/PRIVATEER/RNN_HLS_custom/lstm_ae_small/prj_cmd/prj_vivado'.
+WARNING: [HLS 200-40] No /home/dimdano/Desktop/PRIVATEER/RNN_HLS_custom/lstm_ae_small/prj_cmd/prj_vivado/cmd_z7045_ae_r1/cmd_z7045_ae_r1.aps file found.
+INFO: [HLS 200-1510] Running: set_top lstm 
+INFO: [HLS 200-1510] Running: add_files ../lstm_fpga.cpp -cflags -std=c++0x 
+INFO: [HLS 200-10] Adding design file '../lstm_fpga.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files /home/dimdano/Desktop/PRIVATEER/RNN_HLS_custom/lstm_ae_small/common/includes/xcl2/xcl2.cpp -cflags -std=c++0x 
+INFO: [HLS 200-10] Adding design file '/home/dimdano/Desktop/PRIVATEER/RNN_HLS_custom/lstm_ae_small/common/includes/xcl2/xcl2.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb ../tb_lstm.cpp -cflags -std=c++0x 
+INFO: [HLS 200-10] Adding test bench file '../tb_lstm.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files /home/dimdano/Desktop/PRIVATEER/RNN_HLS_custom/lstm_ae_small/common/includes/xcl2 -cflags -std=c++0x 
+INFO: [HLS 200-10] Adding design file '/home/dimdano/Desktop/PRIVATEER/RNN_HLS_custom/lstm_ae_small/common/includes/xcl2' to the project
+INFO: [HLS 200-1510] Running: add_files ../../nnet_utils/ -cflags -std=c++0x 
+INFO: [HLS 200-10] Adding design file '../../nnet_utils/' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset cmd_z7045_ae_r1 
+INFO: [HLS 200-10] Creating and opening solution '/home/dimdano/Desktop/PRIVATEER/RNN_HLS_custom/lstm_ae_small/prj_cmd/prj_vivado/cmd_z7045_ae_r1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+WARNING: [HLS 200-40] No /home/dimdano/Desktop/PRIVATEER/RNN_HLS_custom/lstm_ae_small/prj_cmd/prj_vivado/cmd_z7045_ae_r1/cmd_z7045_ae_r1.aps file found.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.1;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcu200-fsgd2104-2-e 
+INFO: [HLS 200-1611] Setting target device to 'xcu200-fsgd2104-2-e'
+INFO: [HLS 200-1510] Running: create_clock -period 300MHz -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.333ns.
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../../tb_lstm.cpp in debug mode
+csim.mk:76: recipe for target 'obj/tb_lstm.o' failed
+In file included from ../../../../../tb_lstm.cpp:9:0:
+../../../../../utils.h:21:20: fatal error: xcl2.hpp: No such file or directory
+ #include "xcl2.hpp"
+                    ^
+compilation terminated.
+make: *** [obj/tb_lstm.o] Error 1
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.81 seconds. CPU system time: 0.46 seconds. Elapsed time: 0.65 seconds; current allocated memory: 250.546 MB.
+4
+    while executing
+"source build.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel \#0 [list source $arg] "
+
+INFO: [Common 17-206] Exiting vitis_hls at Sat Jan 20 00:51:27 2024...

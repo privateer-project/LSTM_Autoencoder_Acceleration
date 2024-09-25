@@ -1,0 +1,12 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../../tb_lstm.cpp in debug mode
+csim.mk:76: recipe for target 'obj/tb_lstm.o' failed
+In file included from ../../../../../tb_lstm.cpp:9:0:
+../../../../../utils.h:21:20: fatal error: xcl2.hpp: No such file or directory
+ #include "xcl2.hpp"
+                    ^
+compilation terminated.
+make: *** [obj/tb_lstm.o] Error 1
+ERR: [SIM 100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 3] *************** CSIM finish ***************
